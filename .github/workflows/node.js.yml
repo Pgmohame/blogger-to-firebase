@@ -1,8 +1,8 @@
-name: Run Server on Schedule
+name: Run Server Every Minute
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Run every day at midnight UTC
+    - cron: '* * * * *' # Run every minute
 
 jobs:
   build:
@@ -20,4 +20,5 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run blogger-to-firebase.js
+      - name: Run server
+        run: node blogger-to-firebase.js
